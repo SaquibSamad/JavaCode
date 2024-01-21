@@ -19,6 +19,6 @@ pipeline {
 				sh 'mvn clean package'
 				echo 'package is completd'
 			}
-		}
+		
 	}
 }

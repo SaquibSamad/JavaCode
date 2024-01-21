@@ -1,24 +1,26 @@
 pipeline {
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '2' , artifactNumToKeepStr: '2'))
-	}
+		}
 	agent any
 	stages {
 		stage ('Code compilation'){
-			steps {
+			steps {	
 				sh 'mvn clean compile'
 				echo 'compilation is completd'
-			}
+				}
+				}
 		stage ('Code test'){
 			steps {
 				sh 'mvn clean test'
 				echo 'test is completd'
+			}
 			}
 		stage ('Code package'){
 			steps {
 				sh 'mvn clean package'
 				echo 'package is completd'
 			}
-		
+		        }
+		}		
 	}
-}

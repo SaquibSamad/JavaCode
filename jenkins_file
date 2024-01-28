@@ -2,7 +2,7 @@ pipeline {
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '2' , artifactNumToKeepStr: '2'))
 		}
-	agent any
+	agent { lable 'slave1' }
 	stages {
 		stage ('Code compilation'){
 			steps {	
